@@ -15,5 +15,22 @@
   <%= @post.content %>
 </p>
 
+<strong>Leave a comment:</strong>
+<form>
+
+
+<strong>Comments:</strong>
+
+<%=render partial: "comment_form", locals: {comment: @comment}%>
+
+<%@post.comments.each do |comment|%>
+
+  <p><%= comment.name %></p>
+  <p><%= comment.title %></p>
+  <p><%= comment.content %></p>
+
+<%end%>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+<%= link_to 'Comment'
