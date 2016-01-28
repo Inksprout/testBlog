@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :posts do
-    resources :comments
+    resources :comments, :only => [:create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

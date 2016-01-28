@@ -32,7 +32,7 @@
 
 <form>
 
-<%=render partial: "comment_form", locals: {comment: @comment}%>
+<%=render partial: "comment_form", locals: {post: @post}%>
 </form>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
