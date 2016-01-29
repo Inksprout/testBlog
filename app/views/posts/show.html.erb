@@ -30,10 +30,7 @@
 
 <strong>Leave a comment:</strong>
 
-<form>
-
 <%=render partial: "comment_form", locals: {post: @post}%>
-</form>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
