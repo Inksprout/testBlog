@@ -29,5 +29,7 @@
 </table>
 
 <br>
+<%if current_user && current_user.email == "candygoodison@gmail.com"%>
 
 <%= link_to 'New Post', new_post_path %>
+<%end%>
