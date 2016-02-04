@@ -1,7 +1,10 @@
 <%= form_for([post, post.comments.build]) do |form| %>
 
 
+<!DOCTYPE html>
 
+  <%=if user_signed_in? do %>
+   
   <div class="field">
     <%= form.label :name %><br>
     <%= form.text_field :name %>
