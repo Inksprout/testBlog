@@ -29,7 +29,7 @@
 </table>
 
 <br>
-<%if current_user && current_user.email == "candygoodison@gmail.com"%>
+<%if current_user && (current_user.email == "candygoodison@gmail.com" || current_user.email == "doom-pie@hotmail.com")%>
 
 <%= link_to 'New Post', new_post_path %>
 <%end%>

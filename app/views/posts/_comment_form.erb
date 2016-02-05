@@ -3,11 +3,12 @@
 
 <!DOCTYPE html>
 
-  <%=if user_signed_in? do %>
-   
+  <%- if user_signed_in? %>
+
+
   <div class="field">
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field(:name, :value => current_user.name) %>
   </div>
   <div class="field">
     <%= form.label :comment %><br>
@@ -16,4 +17,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  <% end %>
 <% end %>
