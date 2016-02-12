@@ -1,37 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @post.name %>
-</p>
+<div class="post_info">
+  <div class = "row">
+    <div class="col-md-4">
+      <p>
+        <h2><%= @post.title %></h2>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p class = "nameposition">
+        <%= @post.name %>
+      </p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="row pink">
+  <div class="col-md-12">
+    <p>
+      <%= @post.content %>
+    </p>
+  <div>
+</div>
+<div class="row green">
+  <div class="col-md-12">
+    <%@post.comments.each do |comment| %>
+      <p>
+        <%= comment.comment %>
+      </p>
+      <p>
+        <b>Commenter:</b>
+        <%= comment.name %>
+      </p>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+<div class="row blue">
+  <div class="col-md-12">
+    <strong>Leave a comment:</strong>
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 
-<h2>Comments</h2>
-<%@post.comments.each do |comment| %>
-  <p>
-    <b>Commenter:</b>
-    <%= comment.name %>
-  </p>
-
-  <p>
-    <b>Comment</b>
-    <%= comment.comment %>
-  </p>
-<% end %>
-
-<strong>Leave a comment:</strong>
-<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-
-<%=render partial: "comment_form", locals: {post: @post}%>
+    <%=render partial: "comment_form", locals: {post: @post}%>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
